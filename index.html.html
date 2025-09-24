@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purulia Darshan - Exploring the Beauty of West Bengal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav-dot.active {
+            background-color: #4CAF50;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-green-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Purulia Darshan</h1>
+                    <p class="text-green-200">Discover the Unexplored Beauty of West Bengal</p>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="nav-link hover:text-green-200 active" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link hover:text-green-200" data-page="about">About</a></li>
+                        <li><a href="#" class="nav-link hover:text-green-200" data-page="places">Places</a></li>
+                        <li><a href="#" class="nav-link hover:text-green-200" data-page="festivals">Festivals</a></li>
+                        <li><a href="#" class="nav-link hover:text-green-200" data-page="gallery">Gallery</a></li>
+                        <li><a href="#" class="nav-link hover:text-green-200" data-page="contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero-section mb-12">
+                <div class="relative h-96 rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b29675cc-e0ac-4a29-a658-56f4ad419c6e.png" alt="Panoramic view of Purulia landscape with lush green fields, rolling hills, and traditional houses under clear blue sky" 
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center text-white px-4">
+                            <h2 class="text-4xl font-bold mb-4">Experience the Magic of Purulia</h2>
+                            <p class="text-xl max-w-2xl mx-auto">Discover stunning landscapes, rich culture, and ancient heritage in this hidden gem of West Bengal</p>
+                            <button class="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-all">
+                                Explore Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="highlights mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Why Visit Purulia?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/552aa887-a83b-49e1-92ba-5705824fd782.png" alt="Ayodhya Hills panoramic view with lush greenery and waterfalls in Purulia" 
+                            class="w-full h-48 object-cover rounded mb-4">
+                        <h4 class="text-xl font-semibold mb-2 text-green-700">Natural Beauty</h4>
+                        <p class="text-gray-600">Explore scenic hills, waterfalls, and forests that make Purulia a nature lover's paradise.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="C:\Users\somen\OneDrive\Desktop\Projet image/chhau.jpeg" alt="Traditional Chhau dance performance with colorful masks and costumes in Purulia" 
+                            class="w-full h-48 object-cover rounded mb-4">
+                        <h4 class="text-xl font-semibold mb-2 text-green-700">Rich Culture</h4>
+                        <p class="text-gray-600">Experience the vibrant Chhau dance and other traditional arts that Purulia is famous for.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="C:\Users\somen\OneDrive\Desktop\Projet image/historical.jpeg" alt="Ancient stone temple with intricate carvings in the historical sites of Purulia" 
+                            class="w-full h-48 object-cover rounded mb-4">
+                        <h4 class="text-xl font-semibold mb-2 text-green-700">Historical Sites</h4>
+                        <p class="text-gray-600">Discover ancient temples and archaeological sites that tell the story of Purulia's glorious past.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="gallery" class="page">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Purulia Photo Gallery</h2>
+                <p class="text-gray-600">Explore the stunning visuals of Purulia's landscapes, culture, and heritage</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/46483e9d-188e-491e-b1e7-4826ab4fcb79.png" alt="Sunrise over Ajodhya Hills with golden rays illuminating the forest canopy" 
+                        class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-gray-800">Ajodhya Hills Sunrise</h4>
+                        <p class="text-gray-600 text-sm mt-1">The breathtaking view of sunrise from Ajodhya Hills</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/830e6bcc-2bdd-4a51-8831-4fb4004e280a.png" alt="Turga Dam reservoir with calm blue waters surrounded by green hills in Purulia" 
+                        class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-gray-800">Turga Dam</h4>
+                        <p class="text-gray-600 text-sm mt-1">The serene waters of Turga Dam surrounded by nature</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af6575e8-0005-4316-8750-421186246a1f.png" alt="Colorful Chhau dance mask with intricate details used in Purulia's traditional performances" 
+                        class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-gray-800">Chhau Dance Masks</h4>
+                        <p class="text-gray-600 text-sm mt-1">Traditional masks used in the famous Chhau dance</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8f41be29-2cf6-4cc2-92b7-9bc8fc043bc8.png" alt="Long stone bridge over a river with lush green surroundings in Purulia countryside" 
+                        class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-gray-800">Stone Bridge</h4>
+                        <p class="text-gray-600 text-sm mt-1">Ancient stone bridges across Purulia's rivers</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/622ea8c3-8f35-4f37-94df-3cb9006d133c.png" alt="Traditional village hut with thatched roof surrounded by mustard fields in rural Purulia" 
+                        class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-gray-800">Rural Life</h4>
+                        <p class="text-gray-600 text-sm mt-1">Glimpse into the simple village life of Purulia</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/beb207bc-fec1-4c85-94ea-9927628a0073.png" alt="Waterfall cascading down rocky cliffs with lush green vegetation in Purulia's hills" 
+                        class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-gray-800">Joychandi Waterfall</h4>
+                        <p class="text-gray-600 text-sm mt-1">Majestic waterfalls hidden in Purulia's forests</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+
+        <!-- Places Page -->
+        <div id="places" class="page">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Famous Places of Purulia</h2>
+                <p class="text-gray-600">Explore these must-visit tourist destinations in Purulia</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/Ayodha_Hills.jpg" alt="Ayodhya Hills panoramic view" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Ayodhya Hills</h4>
+                    <p class="text-gray-600">Known for breathtaking views and trekking trails, one of Purulia's most popular spots at 700m elevation.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/Baranti-Purulia.jpg" alt="Serene Baranti Lake with hills" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Baranti Lake</h4>
+                    <p class="text-gray-600">Picturesque lake surrounded by forests, popular for bird watching and peaceful boating.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/joychandi falls.webp" alt="Joychandi waterfalls in monsoon" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Joychandi Falls</h4>
+                    <p class="text-gray-600">Majestic waterfalls hidden in Purulia's forests, best visited during rainy season.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/deulghata.jpeg" alt="Ancient Deulghata Temple complex" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Deulghata Temples</h4>
+                    <p class="text-gray-600">9th century red stone temples with intricate terracotta carvings and sculptures.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/pakbirra.jpeg" alt="Ancient Jain temples at Pakbirra" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Pakbirra Jain Temples</h4>
+                    <p class="text-gray-600">Group of ancient Jain temples dating back to 9th-10th century with exquisite stone carvings.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/telkupi.jpeg" alt="Submerged temple at Telkupi" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Telkupi Temples</h4>
+                    <p class="text-gray-600">Partially submerged ancient temples visible in summer months when Damodar river water recedes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/84114691-cb3b-42dd-bdb8-f980b09b9037.png" alt="Serene Baranti Lake surrounded by hills" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Baranti Lake</h4>
+                    <p class="text-gray-600">A picturesque lake surrounded by dense forests and hills, popular for bird watching.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/68d07eb6-762f-4e88-8b2a-16dd75742e4e.png" alt="Joychandi Waterfall cascading down rocks" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Joychandi Falls</h4>
+                    <p class="text-gray-600">Majestic waterfall hidden in Purulia's forests, best visited during monsoon season.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/barakana.jpeg" alt="Maa Barakana Temple on hilltop with panoramic views" class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-green-700">Maa Barakana Temple</h4>
+                    <p class="text-gray-600">Ancient hilltop temple dedicated to Goddess Kali, known for its stunning architecture and spiritual significance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Festivals Page -->
+        <div id="festivals" class="page">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Famous Festivals of Purulia</h2>
+                <p class="text-gray-600">Immerse yourself in Purulia's vibrant cultural celebrations</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/Rich.jpeg" alt="Chhau dancers with masks" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 text-green-700">Chhau Dance Festival</h3>
+                        <p class="text-gray-600">April festival featuring UNESCO-recognized martial dances with elaborate masks and costumes.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/tusu.jpg" alt="Women celebrating Tusu festival" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 text-green-700">Tusu Parab</h3>
+                        <p class="text-gray-600">Harvest festival featuring folk songs and dances performed by tribal women in December-January.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="C:\Users\somen\OneDrive\Desktop\Projet image\frontend/bhadu.jpg" alt="Bhadu festival procession" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 text-green-700">Bhadu Festival</h3>
+                        <p class="text-gray-600">Traditional harvest festival celebrated with folk songs and dances in August-September.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/tusu-festival.png" alt="Women celebrating Tusu festival with traditional songs and dances" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 text-green-700">Tusu Parab</h3>
+                        <p class="text-gray-600">Celebrated during harvest season, this folk festival features traditional songs and dances performed by women.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bhadu-festival.png" alt="Villagers singing and dancing during Bhadu festival" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 text-green-700">Bhadu Festival</h3>
+                        <p class="text-gray-600">A harvest festival celebrated with folk songs, dances, and colorful processions in rural Purulia villages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- Contact Page -->
+<div id="contact" class="page">
+    <div class="mb-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Contact & Booking</h2>
+        <p class="text-gray-600">Get travel information or book your Purulia tour package</p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Booking Form</h3>
+                <!-- ✅ id="contactForm" যোগ করা হলো -->
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                        <input type="text" id="name" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="email">Email</label>
+                        <input type="email" id="email" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="phone">Phone</label>
+                        <input type="tel" id="phone" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="tour">Tour Package</label>
+                        <select id="tour" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option>Select a package</option>
+                            <option>2 Days Ayodhya Hills Tour</option>
+                            <option>3 Days Purulia Heritage Tour</option>
+                            <option>5 Day Complete Purulia Experience</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium mt-4">
+                        Book Now
+                    </button>
+                </form>
+                <!-- ✅ success/error message দেখানোর জায়গা -->
+                <p id="formMessage" class="mt-4 text-green-700"></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Contact Information</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Purulia Tourist House, Kotshila, Purulia - 723213</p>
+                <p class="text-gray-600 mb-4"><i class="fas fa-phone mr-2"></i> +91 70761 11493</p>
+                <p class="text-gray-600 mb-4"><i class="fas fa-envelope mr-2"></i> somenmahato2004@gmail.com</p>
+                <p class="text-gray-600"><i class="fas fa-clock mr-2"></i> Open: 10AM - 5PM (Mon-Sat)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">About Purulia</h2>
+                <p class="text-gray-600">Discover Purulia's rich history, geography and culture</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Geography & Climate</h3>
+                        <p class="text-gray-600 mb-4">Purulia is located in the western part of West Bengal, featuring undulating terrain with lateritic soil. The district enjoys a moderate climate with hot summers (25-45°C), cool winters (7-20°C) and moderate rainfall (1100-1500mm annually).</p>
+                        <p class="text-gray-600">The district is known for its scenic hills like Ayodhya, Panchet and Baghmundi ranges, along with numerous waterfalls including Joychandi and Hundru falls.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">History & Culture</h3>
+                        <p class="text-gray-600 mb-4">Purulia has a rich historical legacy dating back to ancient times, evident in its archaeological sites and medieval temples. The region is famous for its indigenous tribal cultures and the UNESCO-recognized Chhau dance.</p>
+                        <p class="text-gray-600">The district has a predominantly tribal population including Santhals, Bhumij and Munda communities who maintain their traditional lifestyles.</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Economy & Tourism</h3>
+                        <p class="text-gray-600">Purulia's economy is primarily agrarian with rice as the main crop. The district is also known for sericulture, handicrafts and mining. Tourism is growing rapidly due to Purulia's natural beauty, cultural heritage and proximity to Jharkhand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Purulia Darshan</h3>
+                    <p class="text-gray-400">Showcasing the natural beauty, cultural heritage, and tourist attractions of Purulia, West Bengal.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Photo Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tourist Attractions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cultural Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Purulia, West Bengal, India</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i> +91 7076111493</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> somenmahato2004@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023 Purulia Darshan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page Navigation Dots (Mobile) -->
+    <div class="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-gray-800 bg-opacity-80 rounded-full p-2">
+        <div class="nav-dot active" data-page="home"></div>
+        <div class="nav-dot" data-page="about"></div>
+        <div class="nav-dot" data-page="places"></div>
+        <div class="nav-dot" data-page="festivals"></div>
+        <div class="nav-dot" data-page="gallery"></div>
+        <div class="nav-dot" data-page="contact"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Page navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navDots = document.querySelectorAll('.nav-dot');
+            const pages = document.querySelectorAll('.page');
+
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Update active nav dot
+                navDots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.dataset.page === pageId) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+            
+            // Add click event to nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showPage(this.dataset.page);
+                });
+            });
+            
+            // Add click event to nav dots
+            navDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    showPage(this.dataset.page);
+                });
+            });
+            
+            // Gallery image interaction
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // You can expand this to show a lightbox
+                    console.log('Opening image in lightbox');
+                });
+            });
+        });
+        // ✅ Contact Form submit -> send data to backend
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const tour = document.getElementById("tour").value;
+
+    try {
+        const response = await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone, tour })
+        });
+
+        const data = await response.json();
+        document.getElementById("formMessage").innerText = "✅ Booking saved successfully!";
+        document.getElementById("formMessage").classList.remove("text-red-600");
+        document.getElementById("formMessage").classList.add("text-green-700");
+        console.log("Saved data:", data);
+    } catch (error) {
+        document.getElementById("formMessage").innerText = "❌ Error saving booking.";
+        document.getElementById("formMessage").classList.remove("text-green-700");
+        document.getElementById("formMessage").classList.add("text-red-600");
+        console.error(error);
+    }
+});
+
+    </script>
+    <script>
+document.querySelector("form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const userData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        tour: document.getElementById("tour").value
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData)
+        });
+
+        const result = await response.json();
+        alert(result.message || "Booking saved!");
+    } catch (err) {
+        console.error("Error:", err);
+        alert("❌ Server error");
+    }
+});
+</script>
+
+</body>
+</html>
